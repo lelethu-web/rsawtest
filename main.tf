@@ -25,7 +25,7 @@ provider "aws" {
 source =  "git::https://github.com/lelethu-web/rsawtest.git?ref=vpc"
 region = var.region
 instance_type  = var.instance_type
-vpc_cidr_block = var.vpc_cidr_block
-public_subnet_ips = var.public_subnet_ips
+#vpc_cidr_block = var.vpc_cidr_block
+#public_subnet_ips = var.public_subnet_ips
 
  }
