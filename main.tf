@@ -17,13 +17,9 @@ terraform {
 }
 
 provider "aws" {
-  //access_key = "var.access_key"
-  //secret_key = "var.secret_key"
   region     = "us-east-1"
-  //shared_credentials_file = ["~/.aws/config"]
   shared_credentials_file = "Users/elethukosana/.aws/credentials"
-
-//"/Users/elethukosana/.aws/credentials"  
+ 
 }
 
 resource "aws_instance" "ec2" {
