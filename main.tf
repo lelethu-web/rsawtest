@@ -17,20 +17,15 @@ terraform {
 }
 
 provider "aws" {
-  //access_key = "var.access_key"
-  //secret_key = "var.secret_key"
   region     = "us-east-1"
-  //shared_credentials_file = ["~/.aws/config"]
   shared_credentials_file = "Users/elethukosana/.aws/credentials"
-
-//"/Users/elethukosana/.aws/credentials"  
 }
 
-resource "aws_instance" "ec2" {
-  ami           = "ami-053b0d53c279acc90" 
-  instance_type = "t2.micro"
+ module "vpc" {
+source =  "git::https://github.com/lelethu-web/rsawtest.git?ref=vpc"
+region = var.region
+instance_type  = var.instance_type
+vpc_cidr_block = var.vpc_cidr_block
+public_subnet_ips = var.public_subnet_ips
 
-  tags = {
-    Name = "rsawebvm"
-  }
-}
+ }
